@@ -59,3 +59,7 @@ bash scripts/run_lightweight_tests.sh
 The scripts assume the original cluster layout and a local LLaMA-Factory checkout. Paths should be edited in the Slurm launchers before running on another machine. Long runs should use Slurm; tests and data-schema checks can be run locally.
 
 # transsion_training
+
+## Portable LLaMA-Factory Training Entry Points
+
+The `llamafactory_impl/` folder contains sanitized LLaMA-Factory configs and launch scripts for running Qwen3-VL Transsion SFT on another cluster. It does not include data, checkpoints, cache files, or private credentials.

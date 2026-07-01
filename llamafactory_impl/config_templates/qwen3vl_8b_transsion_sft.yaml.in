@@ -1,0 +1,50 @@
+### Model
+model_name_or_path: {{MODEL_NAME_OR_PATH}}
+
+### Method
+stage: sft
+do_train: true
+finetuning_type: full
+
+### Dataset
+dataset: {{DATASET_NAME}}
+dataset_dir: {{DATASET_DIR}}
+template: qwen3_vl
+cutoff_len: {{CUTOFF_LEN}}
+preprocessing_num_workers: {{PREPROCESSING_NUM_WORKERS}}
+packing: {{PACKING}}
+
+### Output
+output_dir: {{OUTPUT_DIR}}
+logging_dir: {{LOGGING_DIR}}
+logging_steps: {{LOGGING_STEPS}}
+save_strategy: steps
+save_steps: {{SAVE_STEPS}}
+save_total_limit: {{SAVE_TOTAL_LIMIT}}
+plot_loss: true
+overwrite_output_dir: true
+report_to: {{REPORT_TO}}
+run_name: {{RUN_NAME}}
+
+### Training hyperparameters
+per_device_train_batch_size: {{PER_DEVICE_TRAIN_BATCH_SIZE}}
+gradient_accumulation_steps: {{GRADIENT_ACCUMULATION_STEPS}}
+learning_rate: {{LEARNING_RATE}}
+num_train_epochs: {{NUM_TRAIN_EPOCHS}}
+lr_scheduler_type: cosine
+warmup_ratio: {{WARMUP_RATIO}}
+weight_decay: {{WEIGHT_DECAY}}
+bf16: true
+ddp_timeout: 180000000
+
+### Vision settings
+image_max_pixels: {{IMAGE_MAX_PIXELS}}
+image_min_pixels: {{IMAGE_MIN_PIXELS}}
+
+### Optimizations
+enable_liger_kernel: {{ENABLE_LIGER_KERNEL}}
+flash_attn: {{FLASH_ATTN}}
+gradient_checkpointing: true
+
+### DeepSpeed
+deepspeed: {{DEEPSPEED_CONFIG}}
