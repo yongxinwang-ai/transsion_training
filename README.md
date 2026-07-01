@@ -57,3 +57,5 @@ bash scripts/run_lightweight_tests.sh
 ## Notes
 
 The scripts assume the original cluster layout and a local LLaMA-Factory checkout. Paths should be edited in the Slurm launchers before running on another machine. Long runs should use Slurm; tests and data-schema checks can be run locally.
+
+# transsion_training
