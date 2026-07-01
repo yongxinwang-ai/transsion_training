@@ -1,0 +1,25 @@
+dataset_path: YongxinWang/math-prompt-in-image
+dataset_name: mathvision_testmini_prompt_in_image
+dataset_kwargs: {}
+task: "mathvision_testmini_vts_text_image_conflict"
+test_split: testmini
+output_type: generate_until
+doc_to_visual: !function utils.doc_to_visual
+doc_to_text: !function utils.doc_to_text_conflict
+doc_to_target: !function utils.doc_to_target_image_answer
+generation_kwargs:
+  max_new_tokens: 1024
+process_results: !function utils.mathvision_process_results_conflict
+metric_list:
+  - metric: image_follow_rate
+    aggregation: !function utils.aggregate_percent
+    higher_is_better: true
+  - metric: text_follow_rate
+    aggregation: !function utils.aggregate_percent
+    higher_is_better: true
+  - metric: neither_rate
+    aggregation: !function utils.aggregate_percent
+    higher_is_better: false
+  - metric: both_rate
+    aggregation: !function utils.aggregate_percent
+    higher_is_better: false

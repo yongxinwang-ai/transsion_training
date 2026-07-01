@@ -1,0 +1,32 @@
+# Runtime artifacts
+runs/
+logs/
+slurm/
+lmms_eval_results/
+checkpoints/
+wandb/
+.cache/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+*.err
+*.out
+
+# Model/data artifacts
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.parquet
+*.arrow
+*.jsonl
+*.json
+!implementation/pcd/configs/*.json
+!**/*_schema.json
+
+# Secrets
+.env
+*.token
+*.key

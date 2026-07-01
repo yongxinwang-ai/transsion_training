@@ -1,0 +1,16 @@
+dataset_path: YongxinWang/math-prompt-in-image
+dataset_name: mathvision_testmini_prompt_in_image
+dataset_kwargs: {}
+task: "mathvision_testmini_vts_prompt_occluded"
+test_split: testmini
+output_type: generate_until
+doc_to_visual: !function utils.doc_to_visual_prompt_occluded
+doc_to_text: !function utils.doc_to_text_minimal
+doc_to_target: "answer"
+generation_kwargs:
+  max_new_tokens: 1024
+process_results: !function utils.mathvision_process_results
+metric_list:
+  - metric: mathvision_standard_eval
+    aggregation: !function utils.mathvision_aggregate_results_eval
+    higher_is_better: true
